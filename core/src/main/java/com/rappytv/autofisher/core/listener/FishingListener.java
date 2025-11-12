@@ -11,7 +11,7 @@ import net.labymod.api.util.concurrent.task.Task;
 public class FishingListener {
 
   private static final Random random = new Random();
-  private static final Runnable retraction = AutoFisherAddon.fishingController()::releaseFishingRod;
+  private static final Runnable retraction = AutoFisherAddon.fishingController()::castFishingRod;
 
   private final AutoFisherAddon addon;
 

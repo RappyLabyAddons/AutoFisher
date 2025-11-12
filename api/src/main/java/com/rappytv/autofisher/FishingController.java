@@ -7,7 +7,7 @@ public abstract class FishingController {
 
   private boolean manualRetraction = true;
 
-  public abstract void releaseFishingRod();
+  public abstract void castFishingRod();
 
   public abstract void retractFishingRod();
 

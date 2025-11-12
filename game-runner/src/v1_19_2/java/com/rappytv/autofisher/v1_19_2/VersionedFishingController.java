@@ -17,7 +17,7 @@ import net.minecraft.world.item.Item;
 public class VersionedFishingController extends FishingController {
 
   @Override
-  public void releaseFishingRod() {
+  public void castFishingRod() {
     Player player = Minecraft.getInstance().player;
     if (player == null) {
       return;
