@@ -16,7 +16,7 @@ labyMod {
         displayName = "AutoFisher"
         author = "RappyTV"
         description = "Completely automate the way your fishing rod works"
-        minecraftVersion = "1.19.2"
+        minecraftVersion = "1.17.1<1.21.10"
         version = rootProject.version.toString()
     }
 
