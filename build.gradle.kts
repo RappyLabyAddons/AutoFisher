@@ -15,7 +15,7 @@ labyMod {
         namespace = "autofisher"
         displayName = "AutoFisher"
         author = "RappyTV"
-        description = "..." // TODO: Add description
+        description = "Completely automate the way your fishing rod works"
         minecraftVersion = "*"
         version = rootProject.version.toString()
     }
