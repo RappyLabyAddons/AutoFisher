@@ -1,8 +1,22 @@
 {
   "autofisher": {
     "settings": {
+      "header": {
+        "delay": {
+          "name": "Delay"
+        }
+      },
       "enabled": {
         "name": "Enabled"
+      },
+      "enableDelay": {
+        "name": "Delay"
+      },
+      "randomDelay": {
+        "name": "Random delay"
+      },
+      "delay": {
+        "name": "Delay in seconds"
       }
     }
   }
