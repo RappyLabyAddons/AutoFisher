@@ -10,7 +10,8 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraft.world.item.FishingRodItem;
-import net.minecraft.world.item.Item;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Singleton
 @Implements(FishingController.class)
@@ -22,9 +23,9 @@ public class VersionedFishingController extends FishingController {
     if (player == null) {
       return;
     }
-    Item mainHandItem = player.getMainHandItem().getItem();
-    if (mainHandItem instanceof FishingRodItem) {
-      this.useItem(InteractionHand.MAIN_HAND); // TODO: Add off hand support
+    InteractionHand hand = this.getFishingRodHand(player);
+    if (hand != null) {
+      this.useItem(hand);
     }
   }
 
@@ -39,11 +40,25 @@ public class VersionedFishingController extends FishingController {
       return;
     }
 
-    AutoFisherAddon.fishingController().setManualRetraction(false);
-    this.useItem(InteractionHand.MAIN_HAND);
+    InteractionHand hand = this.getFishingRodHand(player);
+    if (hand != null) {
+      AutoFisherAddon.fishingController().setManualRetraction(false);
+      this.useItem(hand);
+    }
   }
 
-  private void useItem(InteractionHand hand) {
+  @Nullable
+  private InteractionHand getFishingRodHand(@NotNull Player player) {
+    if (player.getMainHandItem().getItem() instanceof FishingRodItem) {
+      return InteractionHand.MAIN_HAND;
+    } else if (player.getOffhandItem().getItem() instanceof FishingRodItem) {
+      return InteractionHand.OFF_HAND;
+    }
+
+    return null;
+  }
+
+  private void useItem(@NotNull InteractionHand hand) {
     Player player = Minecraft.getInstance().player;
     if (player == null) {
       return;
