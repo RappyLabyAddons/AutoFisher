@@ -12,7 +12,11 @@ public class AutoFisherConfig extends AddonConfig {
   @SwitchSetting
   private final ConfigProperty<Boolean> enabled = new ConfigProperty<>(true);
 
+  @SwitchSetting
+  private final ConfigProperty<Boolean> autoCast = new ConfigProperty<>(true);
+
   @SettingSection("delay")
+  @SettingRequires("autoCast")
   @SwitchSetting
   private final ConfigProperty<Boolean> enableDelay = new ConfigProperty<>(true);
 
@@ -27,6 +31,10 @@ public class AutoFisherConfig extends AddonConfig {
   @Override
   public ConfigProperty<Boolean> enabled() {
     return this.enabled;
+  }
+
+  public ConfigProperty<Boolean> autoCast() {
+    return this.autoCast;
   }
 
   public ConfigProperty<Boolean> enableDelay() {

@@ -26,7 +26,7 @@ public class FishingListener {
 
   @Subscribe
   public void onHookRetract(FishHookRetractEvent event) {
-    if (!event.manual()) {
+    if (this.addon.configuration().autoCast().get() && !event.manual()) {
       if (this.addon.configuration().enableDelay().get()) {
         int delay;
         if (this.addon.configuration().randomDelay().get()) {
