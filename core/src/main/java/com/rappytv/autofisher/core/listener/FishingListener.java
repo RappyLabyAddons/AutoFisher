@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import net.labymod.api.event.Subscribe;
 import net.labymod.api.util.concurrent.task.Task;
 
-public class FishingListener {
+public class FishingListener { // TODO: Restrict with permission
 
   private static final Random random = new Random();
   private static final Runnable retraction = AutoFisherAddon.fishingController()::castFishingRod;
