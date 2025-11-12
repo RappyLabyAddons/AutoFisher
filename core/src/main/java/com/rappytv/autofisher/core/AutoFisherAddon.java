@@ -9,6 +9,7 @@ import net.labymod.api.models.addon.annotation.AddonMain;
 @AddonMain
 public class AutoFisherAddon extends LabyAddon<AutoFisherConfig> {
 
+  public static final String PERMISSION = "autofisher";
   private static AutoFisherAddon instance;
 
   @Override
@@ -17,6 +18,7 @@ public class AutoFisherAddon extends LabyAddon<AutoFisherConfig> {
 
     this.registerSettingCategory();
     this.registerListener(new FishingListener(this));
+    this.labyAPI().permissionRegistry().register(PERMISSION, true, true);
   }
 
   @Override
