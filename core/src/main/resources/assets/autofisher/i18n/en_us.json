@@ -1,0 +1,30 @@
+{
+  "autofisher": {
+    "settings": {
+      "header": {
+        "delay": {
+          "name": "Delay"
+        }
+      },
+      "enabled": {
+        "name": "Enabled"
+      },
+      "autoCast": {
+        "name": "Auto cast",
+        "description": "Automatically cast the fishing rod after retracting it"
+      },
+      "enableDelay": {
+        "name": "Delay",
+        "description": "Enables a delay before a new reel is casted"
+      },
+      "randomDelay": {
+        "name": "Random delay",
+        "description": "Picks a random delay between §b1 and 5 seconds§r."
+      },
+      "delay": {
+        "name": "Delay in seconds",
+        "description": "Choose your own delay in seconds"
+      }
+    }
+  }
+}
