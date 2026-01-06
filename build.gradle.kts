@@ -6,7 +6,7 @@ plugins {
 val versions = providers.gradleProperty("net.labymod.minecraft-versions").get().split(";")
 
 group = "org.example"
-version = providers.environmentVariable("VERSION").getOrElse("1.0.0")
+version = providers.environmentVariable("VERSION").getOrElse("1.0.1")
 
 labyMod {
     defaultPackageName = "com.rappytv.autofisher"
@@ -16,7 +16,7 @@ labyMod {
         displayName = "AutoFisher"
         author = "RappyTV"
         description = "Completely automate the way your fishing rod works"
-        minecraftVersion = "1.17.1<1.21.10"
+        minecraftVersion = "1.17.1<1.21.11"
         version = rootProject.version.toString()
     }
 

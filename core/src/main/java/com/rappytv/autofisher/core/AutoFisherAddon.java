@@ -18,7 +18,7 @@ public class AutoFisherAddon extends LabyAddon<AutoFisherConfig> {
 
     this.registerSettingCategory();
     this.registerListener(new FishingListener(this));
-    this.labyAPI().permissionRegistry().register(PERMISSION, true, true);
+    this.labyAPI().permissionRegistry().register(PERMISSION, false, true);
   }
 
   @Override
