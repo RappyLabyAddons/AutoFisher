@@ -30,7 +30,7 @@ public class FishingListener {
 
   @Subscribe
   public void onHookRetract(FishHookRetractEvent event) {
-    if (!this.isAllowed() || !this.addon.configuration().autoCast().get() || !event.manual()) {
+    if (!this.isAllowed() || !this.addon.configuration().autoCast().get() || event.manual()) {
       return;
     }
 
